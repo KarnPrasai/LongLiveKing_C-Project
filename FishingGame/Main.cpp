@@ -12,6 +12,8 @@ public:
     void GoFishing();
     void HookAFish();
     void PlaceTravel();
+    void PlaceChecker();
+    void Shop();
 
 };
 
@@ -24,13 +26,13 @@ void Player::GoFishing()
             while (!stopAnimation)
             {
 
-                std::cout << "\rSteady." << std::flush;
-                std::this_thread::sleep_for(std::chrono::seconds(1));
-                std::cout << "\rSteady.." << std::flush;
-                std::this_thread::sleep_for(std::chrono::seconds(1));
-                std::cout << "\rSteady..." << std::flush;
-                std::this_thread::sleep_for(std::chrono::seconds(1));
-                std::cout << "\rSteady   " << std::flush;
+                cout << "\rSteady." << flush;
+                this_thread::sleep_for(chrono::seconds(1));
+                cout << "\rSteady.." << flush;
+                this_thread::sleep_for(chrono::seconds(1));
+                cout << "\rSteady..." << flush;
+                this_thread::sleep_for(chrono::seconds(1));
+                cout << "\rSteady   " << flush;
 
             }
         });
@@ -59,14 +61,15 @@ void Player::GoFishing()
 void Player::HookAFish()
 {
     cout << "Caught!!\n";
-    std::string action[] = { "Up", "Down", "Left", "Right" };
+    string action[] = { "Up", "Down", "Left", "Right" };
+
     int count = 0;
 
     for (int i = 0; i < 4; ++i)
     {
         int fishact = rand() % 4;
         cout << "Go " << action[fishact] << " : ";
-        std::string playerAction;
+        string playerAction;
         string input;
         cin >> playerAction;
 
@@ -101,10 +104,22 @@ void Player::PlaceTravel()
     cout << "================================\n";
     cout << "Input Number of the place :";
     cin >> playergoing;
+    cout << "Going to " << FishingArea[playergoing - 1];
 
 
 }
 
+void Player::PlaceChecker()
+{
+
+}
+
+void Player::Shop()
+{
+    cout << "you can upgrade your stuff here.\n";
+    cout << "================================\n";
+
+}
 
 int main()
 {
