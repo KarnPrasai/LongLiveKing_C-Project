@@ -11,7 +11,7 @@
 *.gch
 *.pch
 
-# Compiled Dynamic libraries
+#Compiled Dynamic libraries
 *.so
 *.dylib
 *.dll
@@ -24,9 +24,16 @@
 *.lai
 *.la
 *.a
-*.lib
+#*.lib
 
 # Executables
 *.exe
 *.out
 *.app
+
+# Visual Studio
+*.vs
+
+# Build
+x64
+Debug
