@@ -42,7 +42,6 @@ void Player::GoFishing()
     this_thread::sleep_for(chrono::seconds(waitTime));
     stopAnimation = true;
     animationThread.join();
-
     string input;
     cout << "\nHook!! (Type \"Hook\") : " << flush;
     cin >> input;
@@ -94,7 +93,6 @@ void Player::HookAFish()
 void Player::PlaceTravel()
 {
     string FishingArea[] = { "River","Lake","Beach","Sea","Deep Sea","Island" };
-    int playergoing;
     cout << "Which place do you want to go?\n";
     cout << "================================\n";
     for (int i = 0; i < 6; i++)
@@ -105,7 +103,6 @@ void Player::PlaceTravel()
     cout << "Input Number of the place :";
     cin >> playergoing;
     cout << "Going to " << FishingArea[playergoing - 1];
-
 
 }
 
@@ -124,6 +121,7 @@ void Player::Shop()
 int main()
 {
     Player p;
-    //p.GoFishing();
     p.PlaceTravel();
+    p.GoFishing();
+    
 }
